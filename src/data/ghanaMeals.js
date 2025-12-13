@@ -1,0 +1,38 @@
+export const ghanaMeals = [
+  {
+    id: 1,
+    name: "Bread & Fried Egg",
+    tags: ["breakfast", "lunch", "dinner"],
+    calories: 320,
+    protein: 14,
+    carbs: 30,
+    fat: 16,
+  },
+  {
+    id: 2,
+    name: "Waakye",
+    tags: ["breakfast", "lunch"],
+    calories: 550,
+    protein: 18,
+    carbs: 80,
+    fat: 14,
+  },
+  {
+    id: 3,
+    name: "Rice & Stew",
+    tags: ["lunch", "dinner"],
+    calories: 480,
+    protein: 15,
+    carbs: 70,
+    fat: 12,
+  },
+  {
+    id: 4,
+    name: "Banku & Okro",
+    tags: ["lunch", "dinner"],
+    calories: 520,
+    protein: 10,
+    carbs: 85,
+    fat: 8,
+  },
+];
