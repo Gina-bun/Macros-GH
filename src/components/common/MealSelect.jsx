@@ -1,9 +1,12 @@
+import { useNavigate } from "react-router-dom"
+
 export function MealSelect({mealCategory}){
+    const navigate = useNavigate()
     return (
         <div>
             <div className="flex border border-red-950 rounded-md text-center px-5 py-5  w-[85vw]">
                 <h3>{mealCategory}</h3>
-                <button className="ml-auto bg-white/20 backdrop-blur-md text-white font-semibold py-2 px-4 rounded-lg border border-white/30 hover:bg-white/30 transition ">
+                <button onClick={() => navigate(`/mealoptions/${mealCategory}`)} className="ml-auto bg-white/20 backdrop-blur-md text-white font-semibold py-2 px-4 rounded-lg border border-white/30 hover:bg-white/30 transition ">
                 Add
                 </button>
             </div>
