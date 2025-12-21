@@ -1,15 +1,38 @@
-import { useNavigate } from "react-router-dom"
+import { useNavigate } from "react-router-dom";
 
-export function MealSelect({mealCategory}){
-    const navigate = useNavigate()
-    return (
+export function MealSelect({ mealCategory,
+     meals
+    }) {
+  const navigate = useNavigate();
+
+  function onButtonClick(){
+
+    navigate(`/mealoptions/${mealCategory}`)
+  }
+
+  return (
+    <div>
+      <div className="flex border border-red-950 rounded-md px-5 py-5  w-[85vw]">
         <div>
-            <div className="flex border border-red-950 rounded-md text-center px-5 py-5  w-[85vw]">
-                <h3>{mealCategory}</h3>
-                <button onClick={() => navigate(`/mealoptions/${mealCategory}`)} className="ml-auto bg-white/20 backdrop-blur-md text-white font-semibold py-2 px-4 rounded-lg border border-white/30 hover:bg-white/30 transition ">
-                Add
-                </button>
-            </div>
+          <h3>{mealCategory}</h3>
+          <div className="flex">
+            {
+                meals[mealCategory].map((meal) => {
+                     if( meal.tags.includes(mealCategory)){
+                        return <p key={meal.id}>{meal.name}, </p>
+                     }
+
+
+                     return null
+                })
+            }
+          </div>
         </div>
-    )
+
+        <button onClick={ () => onButtonClick() } className="ml-auto bg-white/20 backdrop-blur-md text-white font-semibold py-2 px-4 rounded-lg border border-white/30 hover:bg-white/30 transition ">
+          Add
+        </button>
+      </div>
+    </div>
+  );
 }
