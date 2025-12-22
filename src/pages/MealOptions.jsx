@@ -24,7 +24,9 @@ export function MealOptions({onAddMeal}){
                 filteredMeals.map((meal) => {
                     return <div className="flex gap-2" key={meal.id}>
                                <h3 >{meal.name}</h3>
-                               <button className="font-bold border px-2 rounded-md" onClick={() => addMealToDisplay(meal, mealType)}>+</button>
+                               <button className="font-bold border px-2 rounded-md" onClick={() => addMealToDisplay(meal)}>
+                                +
+                               </button>
                            </div>
                 })
             }

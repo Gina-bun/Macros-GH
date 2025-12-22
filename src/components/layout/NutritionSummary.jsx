@@ -1,4 +1,4 @@
-export function NutrtionSummary(){
+export function NutrtionSummary({totalCalories}){
     return (
         <>
          <div className="meal-banner grid bg-amber-700/15 py-5 px-5 w-[85vw] h-[40vh] rounded-md m-auto">
@@ -10,7 +10,7 @@ export function NutrtionSummary(){
                 <p>Carbs:</p>
                 <p>Fat:</p>
             </div>
-            <h1 className="text-2xl">Total Calories: </h1>
+            <h1 className="text-2xl">Total Calories:{totalCalories}</h1>
          </div>
         </>
     )
