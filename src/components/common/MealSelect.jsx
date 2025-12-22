@@ -15,12 +15,7 @@ export function MealSelect({ mealCategory,
           <div className="flex">
             {
                 meals[mealCategory].map((meal) => {
-                     if( meal.tags.includes(mealCategory)){
-                        return <p key={meal.id}>{meal.name}, </p>
-                     }
-
-
-                     return null
+                  return <p key={meal.id}>{meal.name}, </p>
                 })
             }
           </div>

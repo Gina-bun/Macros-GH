@@ -1,5 +1,4 @@
 import { useNavigate, useParams} from "react-router-dom"
-import { Navigate } from "react-router-dom"
 import { ghanaMeals } from "../data/ghanaMeals"
 import { Navbar } from "../components/layout/Navbar"
 
