@@ -5,10 +5,7 @@ export function MealSelect({ mealCategory,
     }) {
   const navigate = useNavigate();
 
-  function onButtonClick(){
 
-    navigate(`/mealoptions/${mealCategory}`)
-  }
 
   return (
     <div>
@@ -29,7 +26,7 @@ export function MealSelect({ mealCategory,
           </div>
         </div>
 
-        <button onClick={ () => onButtonClick() } className="ml-auto bg-white/20 backdrop-blur-md text-white font-semibold py-2 px-4 rounded-lg border border-white/30 hover:bg-white/30 transition ">
+        <button onClick={ () => navigate(`/mealoptions/${mealCategory}`) } className="ml-auto bg-white/20 backdrop-blur-md text-white font-semibold py-2 px-4 rounded-lg border border-white/30 hover:bg-white/30 transition ">
           Add
         </button>
       </div>
