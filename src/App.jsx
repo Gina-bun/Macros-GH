@@ -30,26 +30,52 @@ function App() {
 
    }
 
-  //  function sumCalories(mealCategory){
-  //        const total = meals[mealCategory].reduce((acc, meal) => acc + meal.calories, 0);
 
-  //        return total
-  //  }
+//total calories
 const breakfastCalories = meals.breakfast.reduce((total, meal) => total + meal.calories, 0);
 const lunchCalories = meals.lunch.reduce((total, meal) => total + meal.calories, 0);
 const dinnerCalories = meals.dinner.reduce((total, meal) => total + meal.calories, 0);
 
 const totalCalories = breakfastCalories + lunchCalories + dinnerCalories;
 
+//total macros
+//protein
+const breakfastProtein = meals.breakfast.reduce((total, meal) => total + meal.protein, 0);
+const lunchProtein = meals.lunch.reduce((total, meal) => total + meal.protein, 0);
+const dinnerProtein = meals.dinner.reduce((total, meal) => total + meal.protein, 0);
+
+const totalProtein = breakfastProtein + lunchProtein + dinnerProtein
+
+//carbs
+const breakfastCarbs = meals.breakfast.reduce((total, meal) => total + meal.carbs, 0);
+const lunchCarbs = meals.lunch.reduce((total, meal) => total + meal.carbs, 0);
+const dinnerCarbs = meals.dinner.reduce((total, meal) => total + meal.carbs, 0);
+
+const totalCarbs = breakfastCarbs + lunchCarbs + dinnerCarbs
+
+//fats
+const breakfastFat = meals.breakfast.reduce((total, meal) => total + meal.fat, 0);
+const lunchFat = meals.lunch.reduce((total, meal) => total + meal.fat, 0);
+const dinnerFat = meals.dinner.reduce((total, meal) => total + meal.fat, 0);
+
+const totalFat = breakfastFat + lunchFat + dinnerFat
 
       
-
-
 
   return (
     <>
      <Routes>
-      <Route path="/" element={<Home meals={meals} totalCalories={totalCalories}/>} />
+      <Route path="/" element={<Home 
+        meals={meals}
+        totalCalories={totalCalories} 
+        breakfastCalories={breakfastCalories}
+        lunchCalories={lunchCalories} 
+        dinnerCalories={dinnerCalories}
+        totalProtein={totalProtein}
+        totalCarbs={totalCarbs}
+        totalFat={totalFat}
+     
+        />} />
       <Route path="mealoptions/:mealType" element={<MealOptions onAddMeal={selectedMealToDisplay} />} />
      </Routes>
     </>
