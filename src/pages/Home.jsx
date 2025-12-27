@@ -1,5 +1,4 @@
 import { MealSelect } from "../components/common/MealSelect";
-import { Navbar } from "../components/layout/Navbar";
 import { NutrtionSummary } from "../components/layout/NutritionSummary";
 
 export function Home({
@@ -45,8 +44,7 @@ export function Home({
           />
         </div>
 
-        {/* Navbar */}
-        <Navbar/>
+      
     </div>
   );
 }

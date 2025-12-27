@@ -1,6 +1,7 @@
 import { useNavigate, useParams} from "react-router-dom"
+import { BackNav } from "../components/layout/BackNav"
 import { ghanaMeals } from "../data/ghanaMeals"
-import { Navbar } from "../components/layout/Navbar"
+
 
 export function MealOptions({onAddMeal}){
    const { mealType }  = useParams()
@@ -17,7 +18,10 @@ export function MealOptions({onAddMeal}){
     }
   
     return (
-        <div>
+        <div className="py-3 px-10">
+            {/* Back nav button */}
+            <BackNav/>
+
             <h1 className="font-bold">Select a {mealType} meal</h1>
 
             {
@@ -32,7 +36,7 @@ export function MealOptions({onAddMeal}){
             }
 
         
-            <Navbar/>
+           
         </div>
     )
 }
