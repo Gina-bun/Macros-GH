@@ -21,7 +21,7 @@ export function MealSelect({ mealCategory,
           </div>
         </div>
 
-        <button onClick={ () => navigate(`/mealoptions/${mealCategory}`) } className="ml-auto bg-white/20 backdrop-blur-md text-white font-semibold py-2 px-4 rounded-lg border border-white/30 hover:bg-white/30 transition ">
+        <button onClick={ () => navigate(`/mealoptions/${mealCategory}`) } className="ml-auto bg-[#595c56] backdrop-blur-md text-[#f6e3b3] font-semibold py-2 px-4 rounded-lg borders border-[#595c56]/70 hover:bg-[#595c56]/90 transition ">
           Add
         </button>
       </div>
