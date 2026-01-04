@@ -1,50 +1,45 @@
 import { MealSelect } from "../components/common/MealSelect";
 import { NutrtionSummary } from "../components/layout/NutritionSummary";
+import { Utensils } from "lucide-react";
+
 
 export function Home({
-  meals, 
+  meals,
   totalCalories,
   breakfastCalories,
   lunchCalories,
   dinnerCalories,
   totalProtein,
   totalCarbs,
-  totalFat
- }) {
-
- 
-  
-
+  totalFat,
+}) {
   return (
-    <div className="grid">
-      <h1 className="p-2 font-bold pl-10 text-3xl text-center">Macros</h1>
-        {/* Nutrition summary banner */}
-      <NutrtionSummary 
-      totalCalories={totalCalories}
-      breakfastCalories={breakfastCalories}
-      lunchCalories={lunchCalories}
-      dinnerCalories={dinnerCalories}
-      totalProtein={totalProtein}
-      totalCarbs={totalCarbs}
-      totalFat={totalFat}
-      />
-        {/* Meal select sectiom */}
-        <div className="meal-plan flex flex-col gap-4 py-3 m-auto">
-          <MealSelect 
-          mealCategory="breakfast"
-          meals={meals}
-           />
-          <MealSelect 
-          mealCategory="lunch" 
-          meals={meals}
-          />
-          <MealSelect 
-          mealCategory="dinner" 
-          meals={meals}
-          />
+    <div className="flex flex-col">
+      <div className="flex items-center justify-center py-3">
+        <Utensils className="w-12 h-12  rounded-md bg-orange-500 p-2" />
+        <div className="pl-1">
+            <h1 className="font-bold text-3xl text-left">Macros</h1>
+            <p className="text-[0.7em]">Track your daily intake</p>
         </div>
+        
+      </div>
 
-      
+      {/* Nutrition summary banner */}
+      <NutrtionSummary
+        totalCalories={totalCalories}
+        breakfastCalories={breakfastCalories}
+        lunchCalories={lunchCalories}
+        dinnerCalories={dinnerCalories}
+        totalProtein={totalProtein}
+        totalCarbs={totalCarbs}
+        totalFat={totalFat}
+      />
+      {/* Meal select sectiom */}
+      <div className="meal-plan flex flex-col gap-4 py-3 m-auto">
+        <MealSelect mealCategory="breakfast" meals={meals} />
+        <MealSelect mealCategory="lunch" meals={meals} />
+        <MealSelect mealCategory="dinner" meals={meals} />
+      </div>
     </div>
   );
 }
