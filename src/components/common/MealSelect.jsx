@@ -66,7 +66,12 @@ export function MealSelect({ mealCategory, meals, breakfastCalories, lunchCalori
               >
                 <div>
                   <p>{meal.name}</p>
-                  <p>{meal.calories}kcal</p>
+                  <div className="flex gap-0.5 items-center">
+                      <p>{meal.calories}kcal</p>
+                      <span className="font-bold text-2xl pb-3">.</span>
+                      <span>{meal.quantity}x</span>
+                  </div>
+                  
                 </div>
                 <Trash />
               </div>

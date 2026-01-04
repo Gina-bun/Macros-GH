@@ -13,6 +13,8 @@ export function Home({
   totalCarbs,
   totalFat,
 }) {
+
+
   return (
     <div className="flex flex-col">
       <div className="flex items-center justify-center py-3">

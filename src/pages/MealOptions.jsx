@@ -16,6 +16,8 @@ export function MealOptions({ onAddMeal }) {
     meal.tags.includes(mealType)
   );
 
+  const amountOfMeals = filteredMeals.length
+
   function addMealToDisplay(meal) {
     onAddMeal(meal, mealType);
     setCounts((prev) => ({
@@ -34,6 +36,9 @@ export function MealOptions({ onAddMeal }) {
      }
     })
   }
+
+
+
 
   return (
     <div className="grid justify-center gap-4 ">
@@ -61,7 +66,7 @@ export function MealOptions({ onAddMeal }) {
        
       </div>
 
-      <p className="px-3">5 {mealType} options</p>
+      <p className="px-3">{amountOfMeals} {mealType} options</p>
 
       {filteredMeals.map((meal) => {
         return (

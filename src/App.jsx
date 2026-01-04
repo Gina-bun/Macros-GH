@@ -14,10 +14,12 @@ function App() {
 
    
    function selectedMealToDisplay(meal, mealCategory){
-    if(!meals[mealCategory].some(item => item.name === meal.name)){
+    const existingMeal = meals[mealCategory].some(item => item.name === meal.name)
+
+    if(!existingMeal){
        const newMeal = {
         ...meal,
-        quantity: 1
+        quantity: 1,
       }
 
       
@@ -27,7 +29,16 @@ function App() {
        }))
 
  
-      console.log(newMeal.id)
+      console.log(newMeal.quantity)
+    }else {
+      setMeals((prev) => ({
+        ...prev,
+        [mealCategory]: prev[mealCategory].map(item => 
+          item.name === meal.name
+             ? {...item, quantity: item.quantity + 1}
+             : item
+        ),
+      }))
     }
    }
 
@@ -36,7 +47,6 @@ function App() {
       ...prev
     }))
   }
-
 
 //total calories
 const breakfastCalories = meals.breakfast.reduce((total, meal) => total + meal.calories, 0);
