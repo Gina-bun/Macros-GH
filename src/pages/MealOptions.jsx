@@ -16,35 +16,46 @@ export function MealOptions({ onAddMeal }) {
   }
 
   return (
-    <div className="py-3 px-10 grid gap-4">
-      <div className="flex">
+    <div className="grid justify-center gap-4 ">
+      <div className={`flex items-center gap-4 w-screen bg-amber-600 py-7 px-3 rounded-bl-3xl rounded-br-3xl ${mealType === "breakfast" ? "breakfast-header" : mealType === "lunch" ? "lunch-header" : mealType === "dinner" ? "dinner-header" : ""}`}>
         {/* Back nav button */}
         <BackNav />
 
-        <h1 className="font-bold m-auto">Select a {mealType} meal</h1>
+        <h1 className="font-bold text-xl">Add {mealType}</h1>
       </div>
 
       {filteredMeals.map((meal) => {
         return (
-          <div className="flex flex-col gap-2 border py-2 px-3 rounded-md" key={meal.id}>
+          <div
+            className="flex mx-3 flex-col gap-2 border py-2 px-3 rounded-md"
+            key={meal.id}
+          >
             <div className="flex w-full justify-between">
-              <h3>{meal.name}</h3>
+              <div>
+                <h3>{meal.name}</h3>
+                <p>{meal.portion}</p>
+              </div>
+
               <button
-                className="font-bold border px-2 py-1 rounded-md"
+                className="font-bold border px-2 py-1 rounded-md max-h-fit"
                 onClick={() => addMealToDisplay(meal)}
               >
-                select
+                Add
               </button>
             </div>
-            
-            <div className="flex gap-2">
-                <span>Calories:{meal.calories}kcal</span>
-                <span>protein:{meal.protein}g</span>
-                <span>carbs:{meal.carbs}g</span>
-                <span>fat:{meal.fat}g</span>
-            </div>
-            
 
+            <div className="flex gap-2">
+              <span>{meal.calories}kcal</span>
+              <span>P:{meal.protein}g</span>
+              <span>C:{meal.carbs}g</span>
+              <span>F:{meal.fat}g</span>
+            </div>
+
+            <div className="flex">
+              <button className="decrement">-</button>
+              <p className="count">0</p>
+              <button>+</button>
+            </div>
           </div>
         );
       })}

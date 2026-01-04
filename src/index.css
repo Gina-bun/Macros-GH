@@ -43,3 +43,32 @@ body{
 .dinner-container button{
   background-color: rgb(20, 76, 20);
 }
+
+/* in mealOptions */
+.breakfast-header{
+  background-color: rgb(232, 156, 16);
+}
+
+.breakfast-header button{
+  background-color: rgba(214, 139, 1, 0.914);
+  border: none;
+}
+
+
+.lunch-header{
+  background-color: rgb(153, 19, 19);
+}
+
+.lunch-header button{
+  background-color: rgba(123, 23, 12, 0.556);
+  border: none;
+}
+
+.dinner-header{
+  background-color: rgb(20, 76, 20);
+}
+
+.dinner-header button{
+  background-color:rgba(19, 55, 19, 0.416) ;
+  border: none;
+}
