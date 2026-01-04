@@ -27,16 +27,18 @@ export function Home({
       {/* Nutrition summary banner */}
       <NutrtionSummary
         totalCalories={totalCalories}
-        breakfastCalories={breakfastCalories}
-        lunchCalories={lunchCalories}
-        dinnerCalories={dinnerCalories}
         totalProtein={totalProtein}
         totalCarbs={totalCarbs}
         totalFat={totalFat}
       />
       {/* Meal select sectiom */}
-      <div className="meal-plan flex flex-col gap-4 py-3 m-auto">
-        <MealSelect mealCategory="breakfast" meals={meals} />
+{/*       
+        lunchCalories={lunchCalories}
+        dinnerCalories={dinnerCalories} */}
+
+      <div className="meal-plan flex flex-col gap-4 py-3 pt-6 m-auto">
+        <h3 className="font-bold mb-[-0.5em]">Your meals</h3>
+        <MealSelect mealCategory="breakfast"   breakfastCalories={breakfastCalories} meals={meals} />
         <MealSelect mealCategory="lunch" meals={meals} />
         <MealSelect mealCategory="dinner" meals={meals} />
       </div>

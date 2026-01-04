@@ -11,7 +11,7 @@ export function NutrtionSummary({
 }) {
   return (
     <div>
-      <div className="meal-banner grid bg-[#fcc250]/30 py-5 px-5 w-[85vw] h-fit rounded-md m-auto">
+      <div className="meal-banner grid bg-[#fcc250]/30 justify-center py-5 px-5 w-[85vw] h-fit rounded-md m-auto">
         <div className="total-calories m-auto">
           <div className="flex">
             <Flame />

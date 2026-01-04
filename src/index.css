@@ -7,7 +7,7 @@ body{
 .macros div{
   padding: 1em;
   border-radius: 6px;
-  min-width: 112px;
+  min-width: 92px;
  display: flex;
  flex-direction: column;
   align-items: center;
@@ -15,4 +15,31 @@ body{
 
 .macros p:nth-of-type(1){
   padding-top: .8em;
+}
+
+.breakfast-container{
+  background-color: rgba(244, 202, 124, 0.456);
+  border:solid 1px rgb(232, 156, 16);
+}
+
+.breakfast-container button{
+  background-color: rgb(232, 156, 16);
+}
+
+.lunch-container{
+  background-color: rgba(181, 70, 70, 0.217);
+  border: 1px solid red;
+}
+
+.lunch-container button{
+  background-color: rgb(153, 19, 19);
+}
+
+.dinner-container{
+  background-color: rgba(7, 100, 7, 0.143);
+  border: 1px solid green;
+}
+
+.dinner-container button{
+  background-color: rgb(20, 76, 20);
 }
