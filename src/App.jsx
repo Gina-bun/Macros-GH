@@ -14,9 +14,10 @@ function App() {
 
    
    function selectedMealToDisplay(meal, mealCategory){
-      const newMeal = {
+    if(!meals[mealCategory].some(item => item.name === meal.name)){
+       const newMeal = {
         ...meal,
-        id: crypto.randomUUID(),
+        quantity: 1
       }
 
       
@@ -26,9 +27,15 @@ function App() {
        }))
 
  
-      console.log(meals)
-
+      console.log(newMeal.id)
+    }
    }
+
+  function displayMealsAfterRemove(){
+    setMeals((prev) => ({
+      ...prev
+    }))
+  }
 
 
 //total calories
@@ -76,7 +83,7 @@ const totalFat = breakfastFat + lunchFat + dinnerFat
         totalFat={totalFat}
      
         />} />
-      <Route path="mealoptions/:mealType" element={<MealOptions onAddMeal={selectedMealToDisplay} />} />
+      <Route path="mealoptions/:mealType" element={<MealOptions onAddMeal={selectedMealToDisplay} onRemoveMeal={displayMealsAfterRemove}/>} />
      </Routes>
     </>
   )

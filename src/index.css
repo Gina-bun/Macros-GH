@@ -83,3 +83,18 @@ body{
   background-color:rgba(19, 55, 19, 0.416) ;
   border: none;
 }
+
+.increment,.decrement{
+  padding: 0.01em 0.4em;
+  border-radius: 6px;
+  min-width: 40px;
+  text-align: center;
+}
+
+.decrement{
+  background-color: rgb(224, 220, 214);;
+}
+
+.increment{
+  background-color: rgba(248, 162, 3, 0.914);;
+}
