@@ -32,15 +32,15 @@ export function Home({
         totalFat={totalFat}
       />
       {/* Meal select sectiom */}
-{/*       
-        lunchCalories={lunchCalories}
-        dinnerCalories={dinnerCalories} */}
+      
+      
+        
 
       <div className="meal-plan flex flex-col gap-4 py-3 pt-6 m-auto">
         <h3 className="font-bold mb-[-0.5em]">Your meals</h3>
         <MealSelect mealCategory="breakfast"   breakfastCalories={breakfastCalories} meals={meals} />
-        <MealSelect mealCategory="lunch" meals={meals} />
-        <MealSelect mealCategory="dinner" meals={meals} />
+        <MealSelect mealCategory="lunch"   lunchCalories={lunchCalories} meals={meals} />
+        <MealSelect mealCategory="dinner" dinnerCalories={dinnerCalories} meals={meals} />
       </div>
     </div>
   );

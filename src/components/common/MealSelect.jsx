@@ -1,7 +1,10 @@
 import { useNavigate } from "react-router-dom";
 import { Trash } from "lucide-react";
+import { Sunrise } from "lucide-react";
+import { Sun } from "lucide-react";
+import { Moon } from "lucide-react";
 
-export function MealSelect({ mealCategory, meals }) {
+export function MealSelect({ mealCategory, meals, breakfastCalories, lunchCalories, dinnerCalories}) {
   const navigate = useNavigate();
 
   return (
@@ -18,11 +21,37 @@ export function MealSelect({ mealCategory, meals }) {
         }`}
       >
         <div className="flex justify-between w-full ">
-          <h2>{mealCategory}</h2>
+          {mealCategory === "breakfast" ? (
+            <div className="mealCategory-title flex gap-1">
+                <div className="icon  bg-amber-500/50"><Sunrise className="text-amber-600"/></div>
+                <div>
+                  <h2 className="capitalize">{mealCategory}</h2>
+                  <p>{breakfastCalories} kcal</p>
+                </div>
+                
+            </div>
+           
+          ) : mealCategory === "lunch" ? (
+             <div className="mealCategory-title flex gap-1">
+                 <div className="icon bg-red-800/40"><Sun className="text-red-800"/></div>
+                <div>
+                  <h2 className="capitalize">{mealCategory}</h2>
+                  <p>{lunchCalories} kcal</p>
+                </div>
+            </div>
+          ) : (
+              <div className="mealCategory-title flex gap-1">
+                <div className="icon bg-green-900/50"><Moon className="text-green-900"/></div>
+                <div>
+                  <h2 className="capitalize">{mealCategory}</h2>
+                  <p>{dinnerCalories} kcal</p>
+                </div>
+            </div>
+          )}
 
           <button
             onClick={() => navigate(`/mealoptions/${mealCategory}`)}
-            className="ml-auto bg-[#595c56] backdrop-blur-md text-[#f6e3b3] font-semibold py-2 px-4 rounded-lg borders border-[#595c56]/70 hover:bg-[#595c56]/90 transition "
+            className="ml-auto max-h-fit bg-[#595c56] text-2xl backdrop-blur-md text-[#f6e3b3] py-1 px-3 rounded-lg borders border-[#595c56]/70 hover:bg-[#595c56]/90 transition "
           >
             +
           </button>
@@ -39,7 +68,7 @@ export function MealSelect({ mealCategory, meals }) {
                   <p>{meal.name}</p>
                   <p>{meal.calories}kcal</p>
                 </div>
-                <Trash/>
+                <Trash />
               </div>
             );
           })}

@@ -17,6 +17,7 @@ body{
   padding-top: .8em;
 }
 
+/* for the meal type containers */
 .breakfast-container{
   background-color: rgba(244, 202, 124, 0.456);
   border:solid 1px rgb(232, 156, 16);
@@ -44,7 +45,17 @@ body{
   background-color: rgb(20, 76, 20);
 }
 
-/* in mealOptions */
+.icon{
+  display: flex;
+  font-size: .5em;
+  align-items: center;
+  border-radius: 6px;
+  padding:0.5em;
+  max-height: fit-content;
+
+}
+
+/* for/in mealOptions */
 .breakfast-header{
   background-color: rgb(232, 156, 16);
 }
