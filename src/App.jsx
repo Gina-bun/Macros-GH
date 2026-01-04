@@ -49,31 +49,31 @@ function App() {
   }
 
 //total calories
-const breakfastCalories = meals.breakfast.reduce((total, meal) => total + meal.calories, 0);
-const lunchCalories = meals.lunch.reduce((total, meal) => total + meal.calories, 0);
-const dinnerCalories = meals.dinner.reduce((total, meal) => total + meal.calories, 0);
+const breakfastCalories = meals.breakfast.reduce((total, meal) => total + meal.calories * meal.quantity, 0);
+const lunchCalories = meals.lunch.reduce((total, meal) => total + meal.calories * meal.quantity, 0);
+const dinnerCalories = meals.dinner.reduce((total, meal) => total + meal.calories * meal.quantity, 0);
 
 const totalCalories = breakfastCalories + lunchCalories + dinnerCalories;
 
 //total macros
 //protein
-const breakfastProtein = meals.breakfast.reduce((total, meal) => total + meal.protein, 0);
-const lunchProtein = meals.lunch.reduce((total, meal) => total + meal.protein, 0);
-const dinnerProtein = meals.dinner.reduce((total, meal) => total + meal.protein, 0);
+const breakfastProtein = meals.breakfast.reduce((total, meal) => total + meal.protein * meal.quantity, 0);
+const lunchProtein = meals.lunch.reduce((total, meal) => total + meal.protein * meal.quantity, 0);
+const dinnerProtein = meals.dinner.reduce((total, meal) => total + meal.protein * meal.quantity, 0);
 
 const totalProtein = breakfastProtein + lunchProtein + dinnerProtein
 
 //carbs
-const breakfastCarbs = meals.breakfast.reduce((total, meal) => total + meal.carbs, 0);
-const lunchCarbs = meals.lunch.reduce((total, meal) => total + meal.carbs, 0);
-const dinnerCarbs = meals.dinner.reduce((total, meal) => total + meal.carbs, 0);
+const breakfastCarbs = meals.breakfast.reduce((total, meal) => total + meal.carbs * meal.quantity, 0);
+const lunchCarbs = meals.lunch.reduce((total, meal) => total + meal.carbs * meal.quantity, 0);
+const dinnerCarbs = meals.dinner.reduce((total, meal) => total + meal.carbs * meal.quantity, 0);
 
 const totalCarbs = breakfastCarbs + lunchCarbs + dinnerCarbs
 
 //fats
-const breakfastFat = meals.breakfast.reduce((total, meal) => total + meal.fat, 0);
-const lunchFat = meals.lunch.reduce((total, meal) => total + meal.fat, 0);
-const dinnerFat = meals.dinner.reduce((total, meal) => total + meal.fat, 0);
+const breakfastFat = meals.breakfast.reduce((total, meal) => total + meal.fat * meal.quantity, 0);
+const lunchFat = meals.lunch.reduce((total, meal) => total + meal.fat * meal.quantity, 0);
+const dinnerFat = meals.dinner.reduce((total, meal) => total + meal.fat * meal.quantity, 0);
 
 const totalFat = breakfastFat + lunchFat + dinnerFat
 
