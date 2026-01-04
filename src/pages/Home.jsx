@@ -12,6 +12,7 @@ export function Home({
   totalProtein,
   totalCarbs,
   totalFat,
+  onDeleteMeal,
 }) {
 
 
@@ -40,9 +41,9 @@ export function Home({
 
       <div className="meal-plan flex flex-col gap-4 py-3 pt-6 m-auto">
         <h3 className="font-bold mb-[-0.5em]">Your meals</h3>
-        <MealSelect mealCategory="breakfast"   breakfastCalories={breakfastCalories} meals={meals} />
-        <MealSelect mealCategory="lunch"   lunchCalories={lunchCalories} meals={meals} />
-        <MealSelect mealCategory="dinner" dinnerCalories={dinnerCalories} meals={meals} />
+        <MealSelect mealCategory="breakfast"   breakfastCalories={breakfastCalories} meals={meals} onDeleteMeal={onDeleteMeal}/>
+        <MealSelect mealCategory="lunch"   lunchCalories={lunchCalories} meals={meals} onDeleteMeal={onDeleteMeal}/>
+        <MealSelect mealCategory="dinner" dinnerCalories={dinnerCalories} meals={meals} onDeleteMeal={onDeleteMeal}/>
       </div>
     </div>
   );

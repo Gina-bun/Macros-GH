@@ -4,7 +4,14 @@ import { Sunrise } from "lucide-react";
 import { Sun } from "lucide-react";
 import { Moon } from "lucide-react";
 
-export function MealSelect({ mealCategory, meals, breakfastCalories, lunchCalories, dinnerCalories}) {
+export function MealSelect({ 
+  mealCategory,
+   meals, 
+   breakfastCalories,
+    lunchCalories, 
+    dinnerCalories,
+    onDeleteMeal
+  }) {
   const navigate = useNavigate();
 
   return (
@@ -51,7 +58,7 @@ export function MealSelect({ mealCategory, meals, breakfastCalories, lunchCalori
 
           <button
             onClick={() => navigate(`/mealoptions/${mealCategory}`)}
-            className="ml-auto max-h-fit bg-[#595c56] text-2xl backdrop-blur-md text-[#f6e3b3] py-1 px-3 rounded-lg borders border-[#595c56]/70 hover:bg-[#595c56]/90 transition "
+            className="add-icon ml-auto max-h-fit bg-[#595c56] text-2xl backdrop-blur-md text-[#f6e3b3] py-1 px-3 rounded-lg borders border-[#595c56]/70 hover:bg-[#595c56]/90 transition "
           >
             +
           </button>
@@ -73,7 +80,12 @@ export function MealSelect({ mealCategory, meals, breakfastCalories, lunchCalori
                   </div>
                   
                 </div>
-                <Trash />
+                <button 
+                className="trash-icon"
+                onClick={() => onDeleteMeal(meal, mealCategory)}
+                >
+                      <Trash />
+                </button>
               </div>
             );
           })}

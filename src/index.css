@@ -23,7 +23,7 @@ body{
   border:solid 1px rgb(232, 156, 16);
 }
 
-.breakfast-container button{
+.breakfast-container .add-icon{
   background-color: rgb(232, 156, 16);
 }
 
@@ -32,7 +32,8 @@ body{
   border: 1px solid red;
 }
 
-.lunch-container button{
+
+.lunch-container .add-icon{
   background-color: rgb(153, 19, 19);
 }
 
@@ -41,7 +42,7 @@ body{
   border: 1px solid green;
 }
 
-.dinner-container button{
+.dinner-container .add-icon{
   background-color: rgb(20, 76, 20);
 }
 
@@ -54,6 +55,7 @@ body{
   max-height: fit-content;
 
 }
+
 
 /* for/in mealOptions */
 .breakfast-header{
@@ -97,4 +99,11 @@ body{
 
 .increment{
   background-color: rgba(248, 162, 3, 0.914);;
+}
+
+/* trash icon on every added meal */
+.trash-icon{
+  background: rgba(255, 0, 0, 0.363);
+  padding: .25em;
+  border-radius: 50%;
 }

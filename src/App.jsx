@@ -42,11 +42,19 @@ function App() {
     }
    }
 
-  function displayMealsAfterRemove(){
+   function deleteMeal(meal, mealCategory){
+
+    const remainingMeals = meals[mealCategory].filter((item) => item.id !== meal.id)
+
     setMeals((prev) => ({
-      ...prev
+       ...prev,
+       [mealCategory]: remainingMeals
     }))
-  }
+
+    console.log(remainingMeals)
+   }
+
+
 
 //total calories
 const breakfastCalories = meals.breakfast.reduce((total, meal) => total + meal.calories * meal.quantity, 0);
@@ -91,9 +99,10 @@ const totalFat = breakfastFat + lunchFat + dinnerFat
         totalProtein={totalProtein}
         totalCarbs={totalCarbs}
         totalFat={totalFat}
+        onDeleteMeal={deleteMeal}
      
         />} />
-      <Route path="mealoptions/:mealType" element={<MealOptions onAddMeal={selectedMealToDisplay} onRemoveMeal={displayMealsAfterRemove}/>} />
+      <Route path="mealoptions/:mealType" element={<MealOptions onAddMeal={selectedMealToDisplay}/>} />
      </Routes>
     </>
   )
