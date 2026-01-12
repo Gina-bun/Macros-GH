@@ -1,5 +1,6 @@
 import { useParams } from "react-router-dom";
 import { BackNav } from "../components/layout/BackNav";
+import {AddMealsButton} from "../components/layout/AddMealsButton";
 import { ghanaMeals } from "../data/ghanaMeals";
 import { Sunrise } from "lucide-react";
 import { Sun } from "lucide-react";
@@ -41,8 +42,8 @@ export function MealOptions({ onAddMeal }) {
 
 
   return (
-    <div className="grid justify-center gap-4 ">
-      <div className={`flex items-center gap-4 w-screen bg-amber-600 py-7 px-3 rounded-bl-3xl rounded-br-3xl ${mealType === "breakfast" ? "breakfast-header" : mealType === "lunch" ? "lunch-header" : mealType === "dinner" ? "dinner-header" : ""}`}>
+    <div className="grid gap-4 w-full overflow-x-hidden">
+      <div className={`flex items-center gap-4 w-full bg-amber-600 py-7 px-3 rounded-bl-3xl rounded-br-3xl ${mealType === "breakfast" ? "breakfast-header" : mealType === "lunch" ? "lunch-header" : mealType === "dinner" ? "dinner-header" : ""}`}>
         {/* Back nav button */}
         <BackNav />
 
@@ -71,7 +72,7 @@ export function MealOptions({ onAddMeal }) {
       {filteredMeals.map((meal) => {
         return (
           <div
-            className="flex mx-3 flex-col gap-4.5 border-[0.2px] border-gray-400 bg-yellow-50 shadow-lg py-5 px-3 rounded-md"
+            className="flex flex-col  gap-4.5 border-[0.2px] border-gray-400 bg-yellow-50 shadow-lg py-5 px-3 mx-4 rounded-md"
             key={meal.id}
           >
             <div className="flex w-full justify-between">
@@ -106,6 +107,7 @@ export function MealOptions({ onAddMeal }) {
           </div>
         );
       })}
+     {counts && Object.values(counts).some(count => count > 0) ? <AddMealsButton/> : null}
     </div>
   );
 }

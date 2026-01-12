@@ -42,6 +42,7 @@ function App() {
     }
    }
 
+   //delete meal function
    function deleteMeal(meal, mealCategory){
 
     const remainingMeals = meals[mealCategory].filter((item) => item.id !== meal.id)
@@ -102,7 +103,7 @@ const totalFat = breakfastFat + lunchFat + dinnerFat
         onDeleteMeal={deleteMeal}
      
         />} />
-      <Route path="mealoptions/:mealType" element={<MealOptions onAddMeal={selectedMealToDisplay}/>} />
+      <Route path="mealoptions/:mealType" element={<MealOptions onAddMeal={selectedMealToDisplay} totalCalories={totalCalories}/>} />
      </Routes>
     </>
   )

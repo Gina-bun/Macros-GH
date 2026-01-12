@@ -2,6 +2,8 @@
 
 body{
   background-color: #f6e3b3;
+  box-sizing: border-box;
+  position: relative;
 }
 
 .macros div{
