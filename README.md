@@ -29,4 +29,4 @@ The total macros and calories of all the meals are summed up and displayed.
 - A calender that saves tracks calorie count per day
 - More meal options
 
-Made with 💖 by **Georgina Akumiah**
+Made with 💖 by **Gina**
