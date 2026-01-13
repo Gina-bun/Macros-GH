@@ -116,3 +116,22 @@ body{
     
   }
 }
+
+@media (min-width: 1024px){
+ .macros div{
+  min-width: 222px;
+}
+
+.meal-option-container{
+  grid-template-columns: 1fr 1fr ;
+}
+
+.addMealBtnContainer{
+   justify-content: end;
+}
+
+  button.addMealBtn{
+    width: 10vw;
+    bottom: 30%;
+  }
+}
