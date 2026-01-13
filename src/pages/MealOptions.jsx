@@ -5,11 +5,11 @@ import { ghanaMeals } from "../data/ghanaMeals";
 import { Sunrise } from "lucide-react";
 import { Sun } from "lucide-react";
 import { Moon } from "lucide-react";
-import { useState } from "react";
 
 
-export function MealOptions({ onAddMeal }) {
-  const [counts, setCounts] = useState({})
+
+export function MealOptions({ onAddMeal, meals}) {
+  
   const { mealType } = useParams();
   // const navigate = useNavigate();
 
@@ -19,25 +19,33 @@ export function MealOptions({ onAddMeal }) {
 
   const amountOfMeals = filteredMeals.length
 
-  function addMealToDisplay(meal) {
-    onAddMeal(meal, mealType);
-    setCounts((prev) => ({
-      ...prev,
-      [meal.id]: (prev[meal.id] || 0) + 1
-    }))
-  }
+  // function addMealToDisplay(meal) {
+  //   onAddMeal(meal, mealType, counts[meal.id] ? counts[meal.id] + 1 : 1);
+  //   setCounts((prev) => ({
+  //     ...prev,
+  //     [meal.id]: (prev[meal.id] || 0) + 1
+  //   }))
+  // }
 
-  function decreaseMealCount(meal){
-    setCounts((prev) => {
-      const currentCount = prev[meal.id] || 0
+  // function decreaseMealCount(meal){
+  //   onAddMeal(meal, mealType, counts[meal.id] ? counts[meal.id] - 1 : 0);
+  //   setCounts((prev) => {
+  //     const currentCount = prev[meal.id] || 0
 
-     return {
-             ...prev,
-            [meal.id]: Math.max(0, currentCount - 1),
-     }
-    })
-  }
+  //    return {
+  //            ...prev,
+  //           [meal.id]: Math.max(0, currentCount - 1),
+  //    }
+  //   })
+  // }
 
+  function increaseMealCount(meal){
+    onAddMeal(meal, mealType, +1)
+ }
+
+   function decreaseMealCount(meal){
+    onAddMeal(meal, mealType, -1)
+ }
 
 
 
@@ -96,10 +104,10 @@ export function MealOptions({ onAddMeal }) {
               >
                 -
               </button>
-              <p className="count">{counts[meal.id] || 0}</p>
+              <p className="count">{meals[mealType]?.find(item => item.id === meal.id)?.quantity || 0}</p>
               <button 
               className="increment text-3xl"
-              onClick={() => addMealToDisplay(meal)}
+              onClick={() => increaseMealCount(meal)}
               >
                 +
               </button>
@@ -107,7 +115,7 @@ export function MealOptions({ onAddMeal }) {
           </div>
         );
       })}
-     {counts && Object.values(counts).some(count => count > 0) ? <AddMealsButton/> : null}
+     {meals && Object.values(meals).some(mealCategory => mealCategory.length > 0) ? <AddMealsButton/> : null}
     </div>
   );
 }
