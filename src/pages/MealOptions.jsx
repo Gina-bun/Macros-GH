@@ -80,63 +80,58 @@ export function MealOptions({ onAddMeal, meals }) {
 
       {/* scrollable content */}
 
-<div className="pt-28 overflow-y-auto">
+      <div className="pt-28 overflow-y-auto">
         <p className="px-5 mb-4">
-        {amountOfMeals} {mealType} options
-      </p>
+          {amountOfMeals} {mealType} options
+        </p>
 
-      <div className="meal-option-container grid gap-[1em] mb-5">
-        {filteredMeals.map((meal) => {
-          return (
-            <div
-              className="meal-option flex flex-col gap-4.5 border-[0.2px] border-gray-400 bg-yellow-50 shadow-lg py-5 px-3  mx-4 rounded-md"
-              key={meal.id}
-            >
-              <div className="flex w-full justify-between">
-                <div>
-                  <h3>{meal.name}</h3>
-                  <p>{meal.portion}</p>
+        <div className="meal-option-container grid gap-[1em] mb-5">
+          {filteredMeals.map((meal) => {
+            return (
+              <div
+                className="meal-option flex flex-col gap-4.5 border-[0.2px] border-gray-400 bg-yellow-50 shadow-lg py-5 px-3  mx-4 rounded-md"
+                key={meal.id}
+              >
+                <div className="flex w-full justify-between">
+                  <div>
+                    <h3>{meal.name}</h3>
+                    <p>{meal.portion}</p>
+                  </div>
+                </div>
+
+                <div className="flex gap-4">
+                  <span className="bg-gray-300 rounded-2xl px-2">
+                    {meal.calories}kcal
+                  </span>
+                  <span>P:{meal.protein}g</span>
+                  <span>C:{meal.carbs}g</span>
+                  <span>F:{meal.fat}g</span>
+                </div>
+
+                <div className="flex gap-3 text-2xl">
+                  <button
+                    className="decrement text-3xl"
+                    onClick={() => decreaseMealCount(meal)}
+                  >
+                    -
+                  </button>
+                  <p className="count">
+                    {meals[mealType]?.find((item) => item.id === meal.id)
+                      ?.quantity || 0}
+                  </p>
+                  <button
+                    className="increment text-3xl"
+                    onClick={() => increaseMealCount(meal)}
+                  >
+                    +
+                  </button>
                 </div>
               </div>
-
-              <div className="flex gap-4">
-                <span className="bg-gray-300 rounded-2xl px-2">
-                  {meal.calories}kcal
-                </span>
-                <span>P:{meal.protein}g</span>
-                <span>C:{meal.carbs}g</span>
-                <span>F:{meal.fat}g</span>
-              </div>
-
-              <div className="flex gap-3 text-2xl">
-                <button
-                  className="decrement text-3xl"
-                  onClick={() => decreaseMealCount(meal)}
-                >
-                  -
-                </button>
-                <p className="count">
-                  {meals[mealType]?.find((item) => item.id === meal.id)
-                    ?.quantity || 0}
-                </p>
-                <button
-                  className="increment text-3xl"
-                  onClick={() => increaseMealCount(meal)}
-                >
-                  +
-                </button>
-              </div>
-            </div>
-          );
-        })}
+            );
+          })}
+            {meals[mealType]?.length > 0 && <AddMealsButton/>}
+        </div>
       </div>
-</div>
-      
-
-      {meals &&
-      Object.values(meals).some((mealCategory) => mealCategory.length > 0) ? (
-        <AddMealsButton />
-      ) : null}
     </div>
   );
 }
