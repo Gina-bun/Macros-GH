@@ -129,9 +129,10 @@ export function MealOptions({ onAddMeal, meals }) {
               </div>
             );
           })}
-            {meals[mealType]?.length > 0 && <AddMealsButton/>}
+            
         </div>
       </div>
+      {meals[mealType]?.length > 0 && <AddMealsButton/>}
     </div>
   );
 }
