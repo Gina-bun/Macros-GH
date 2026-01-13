@@ -109,3 +109,10 @@ body{
   padding: .25em;
   border-radius: 50%;
 }
+
+@media (min-width: 768px){
+  button.addMealBtn{
+    width: 95vw;
+    
+  }
+}

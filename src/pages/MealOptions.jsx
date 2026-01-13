@@ -50,7 +50,7 @@ export function MealOptions({ onAddMeal, meals}) {
 
 
   return (
-    <div className="grid gap-4 w-full overflow-x-hidden">
+    <div className="grid gap-4 w-full mb-16  overflow-x-hidden">
       <div className={`flex items-center gap-4 w-full bg-amber-600 py-7 px-3 rounded-bl-3xl rounded-br-3xl ${mealType === "breakfast" ? "breakfast-header" : mealType === "lunch" ? "lunch-header" : mealType === "dinner" ? "dinner-header" : ""}`}>
         {/* Back nav button */}
         <BackNav />
@@ -80,7 +80,7 @@ export function MealOptions({ onAddMeal, meals}) {
       {filteredMeals.map((meal) => {
         return (
           <div
-            className="flex flex-col  gap-4.5 border-[0.2px] border-gray-400 bg-yellow-50 shadow-lg py-5 px-3 mx-4 rounded-md"
+            className="flex flex-col  gap-4.5 border-[0.2px] border-gray-400 bg-yellow-50 shadow-lg py-5 px-3  mx-4 rounded-md"
             key={meal.id}
           >
             <div className="flex w-full justify-between">
