@@ -18,10 +18,15 @@ A simple food calorie and macronutrient calculator specifically for Ghanaian mea
 The total macros and calories of all the meals are summed up and displayed.
 
 ## Screenshots
+<p>
+  <img src="./screenshots/mobile-view-home.png" alt="mobile-view-home" width="200"/>
+   <img src="./screenshots/mobile-view-meals.png" alt="mobile-view-home" width="200"/>
+    <img src="./screenshots/mobile-view-lunch.png" alt="mobile-view-home" width="200"/>
+</p>
 
 ## Future Improvements
 - A delete and edit feature
 - A calender that saves tracks calorie count per day
 - More meal options
 
-Made with love by **Georgina Akumiah**
+Made with 💖 by **Georgina Akumiah**
