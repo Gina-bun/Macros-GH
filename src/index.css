@@ -132,6 +132,7 @@ body{
 
   button.addMealBtn{
     width: 10vw;
-    bottom: 30%;
+    position: relative;
+    margin-top: .5em;
   }
 }

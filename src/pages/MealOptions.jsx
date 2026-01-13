@@ -45,9 +45,9 @@ export function MealOptions({ onAddMeal, meals }) {
   }
 
   return (
-    <div className=" grid gap-4 w-full mb-16  overflow-x-hidden">
+    <div className="grid gap-4 w-full mb-16 overflow-x-hidden">
       <div
-        className={`flex items-center gap-4 w-full bg-amber-600 py-7 px-3 rounded-bl-3xl rounded-br-3xl ${
+        className={`flex fixed top-0 z-1000 items-center gap-4 w-full bg-amber-600 py-7 px-3 rounded-bl-3xl rounded-br-3xl ${
           mealType === "breakfast"
             ? "breakfast-header"
             : mealType === "lunch"
@@ -78,11 +78,14 @@ export function MealOptions({ onAddMeal, meals }) {
         )}
       </div>
 
-      <p className="px-3">
+      {/* scrollable content */}
+
+<div className="pt-28 overflow-y-auto">
+        <p className="px-5 mb-4">
         {amountOfMeals} {mealType} options
       </p>
 
-      <div className="meal-option-container grid gap-[1em]">
+      <div className="meal-option-container grid gap-[1em] mb-5">
         {filteredMeals.map((meal) => {
           return (
             <div
@@ -127,6 +130,8 @@ export function MealOptions({ onAddMeal, meals }) {
           );
         })}
       </div>
+</div>
+      
 
       {meals &&
       Object.values(meals).some((mealCategory) => mealCategory.length > 0) ? (
